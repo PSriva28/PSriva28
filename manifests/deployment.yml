@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: firstimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firstimage
+  template:
+    metadata:
+      labels:
+        app: firstimage 
+    spec:
+      containers:
+        - name: firstimage 
+          image: examp.azurecr.io/firstimage
+          ports:
+          - containerPort: 80
